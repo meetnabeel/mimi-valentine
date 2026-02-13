@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valentine Challenge 💖</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #ffdbe8 0%, #ffc6db 100%);
+        }
+
+        .card {
+            width: 380px;
+            background: #fff8f2;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(255, 105, 135, 0.3);
+            position: relative;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #e63973;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-size: 15px;
+            color: #555;
+            /* margin:20px 0; */
+        }
+
+        .buttons {
+            margin-top: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 5px 5px;
+            background-color: #ff3f77;
+            color: #ffffff;
+            margin-top: 20px;
+
+        }
+
+        .yes {
+            background: #ff3f77;
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 63, 119, 0.4);
+        }
+
+        .no {
+            background: #e6e6e6;
+            color: #555;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #e63973;
+            margin-top: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        img {
+            width: 150px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .margin-left-6 {
+            margin-left: 6px;
+        }
+
+        
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        #memoriesScreen {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #memoriesScreen .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 columns for images */
+            gap: 15px;
+            /* Space between images, reduce or remove if necessary */
+            margin-top: 20px;
+        }
+
+        #memoriesScreen img {
+            width: 100%;
+            /* Make sure the images take up the full width of the grid cell */
+            height: 100%;
+            /* Ensure images maintain their aspect ratio */
+            max-width: 120px;
+            /* Limit maximum width to prevent stretching */
+            max-height: 110px;
+            /* Limit maximum height to prevent stretching */
+            border-radius: 50%;
+            /* Ensure the images are circular */
+            object-fit: cover;
+            /* Ensure the image covers the area without distortion */
+            margin: 0;
+            /* Remove any extra margin that might be causing spacing issues */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <!-- SCREEN 1 -->
+        <div id="screen1">
+            <div class="title">Gugu!</div>
+            <img src="images/cute-little-bear-with-balloon-cartoon-animal-watercolor-illustration_64235-755.png"
+                alt="teddy">
+            <div class="question">ready for a sweet Valentine's challenge?</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="next(1)">Yes</button>
+                <button class="no" onclick="showNo(1)">No</button>
+            </div>
+
+            <div class="footer-text" id="noText1"></div>
+        </div>
+
+        <!-- SCREEN 2 -->
+        <div id="screen2" class="hidden">
+            <div class="title">Love Question</div>
+            <img src="images/rose-you_53876-1001707.png" alt="rose">
+            <div class="question">are you the handsome boy in the world?</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="next(2)">Yes</button>
+                <button class="no" onclick="showNo(2)">No</button>
+            </div>
+
+            <div class="footer-text" id="noText2"></div>
+        </div>
+
+        <!-- SCREEN 3 -->
+        <div id="screen3" class="hidden">
+            <div class="title">Love Question</div>
+            <img src="images/vector-art-romantic-couple-isolated-white-background_615314-695.png" alt="couple">
+            <div class="question">do you think we make a perfect pair?</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="next(3)">Yes</button>
+                <button class="no" onclick="showNo(3)">No</button>
+            </div>
+
+            <div class="footer-text" id="noText3"></div>
+        </div>
+
+        <!-- SCREEN 4 -->
+        <div id="screen4" class="hidden">
+            <div class="title">Love Question</div>
+            <img src="images/pngtree-kitkat-phone-cover-brings-a-touch-of-whimsy-png-image_12459779 (1).png"
+                alt="chocolate">
+            <div class="question">gugu, do I make you feel loved every day?</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="next(4)">Yes</button>
+                <button class="no" onclick="showNo(4)">No</button>
+            </div>
+
+            <div class="footer-text" id="noText4"></div>
+        </div>
+
+        <!-- SCREEN 5 -->
+        <div id="screen5" class="hidden">
+            <div class="title">Love Question</div>
+            <img src="images/pink-teddy-bear-heart-illustration-600nw-2511967927.png" alt="couple">
+            <div class="question">Will you be my valentine forever?</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="next(5)">Yes</button>
+                <button class="no" onclick="showNo(5)">No</button>
+            </div>
+
+            <div class="footer-text" id="noText5"></div>
+        </div>
+
+        <!-- SCREEN 6 -->
+        <div id="screen6" class="hidden">
+            <div class="title">Success! 💖</div>
+            <img src="images/surprise-red-gift-box-present-vector-special-give-away-package_108231-1884.png" alt="gift">
+            <div class="question">I've three special gifts for you. Pick one to open: 🎁</div>
+
+            <div class="buttons">
+                <button class="yes" onclick="openGift1()">Open Gift 1</button>
+                <button class="yes" onclick="openGift2()">Open Gift 2</button>
+                <button class="yes" onclick="openGift3()">Open Gift 3</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 7 (Gift 1 - Letter Screen) -->
+        <div id="letterScreen" class="hidden">
+            <div class="title">A Letter For You</div>
+            <p>My gugu,</p>
+            <p>I just wanted to tell you that you are the best thing that has ever happened to me, and with you it feels
+                like I am complete. Living with you, spending time with you made me realize more and more that why god
+                has chosen you for me, thank you for being with me 💖💖.</p>
+            <button class="back-button" onclick="goBackToGifts()">← <span class="margin-left-6"></span>Back to
+                Gifts</button>
+        </div>
+
+        <!-- SCREEN 8 (Gift 2 - Promise Screen) -->
+        <div id="promiseScreen" class="hidden">
+            <div class="title">My Promise</div>
+            <p>I promise that I will always be there for you, and I won't ever let you down on anything, be it small or
+                big. I will always be standing firm with you 💖💖</p>
+            <button class="back-button" onclick="goBackToGifts()">← <span class="margin-left-6"></span>Back to
+                Gifts</button>
+        </div>
+        <div id="memoriesScreen" class="hidden">
+            <!-- SCREEN 9 (Gift 3 - memories Screen) -->
+            <div class="title">Our Memories</div>
+            <p>every picture of us is my favorite, and this small collection is just a small reminder of how beautiful
+                our journey has been so far 💖💖</p>
+            <div class="image-grid">
+                <img src="images/Snapchat-1044428427.jpg" alt="memory 1">
+                <img src="images/Snapchat-1205242410.jpg" alt="memory 2">
+                <img src="images/Snapchat-1541468635.jpg" alt="memory 3">
+                <img src="images/Snapchat-1729593187.jpg" alt="memory 4">
+                <img src="images/Snapchat-91805228.jpg" alt="memory 5">
+                <img src="images/Snapchat-924279282.jpg" alt="memory 6">
+            </div>
+            <button class="back-button" onclick="goBackToGifts()">← <span class="margin-left-6"></span>Back to
+                Gifts</button>
+        </div>
+        
+
+    </div>
+
+    <script>
+
+        function next(screen) {
+            document.getElementById("screen" + screen).classList.add("hidden");
+            document.getElementById("screen" + (screen + 1)).classList.remove("hidden");
+        }
+
+        function openGift1() {
+            document.getElementById("screen6").classList.add("hidden");
+            document.getElementById("letterScreen").classList.remove("hidden");
+        }
+
+        function openGift2() {
+            document.getElementById("screen6").classList.add("hidden");
+            document.getElementById("promiseScreen").classList.remove("hidden");
+        }
+        function openGift3() {
+            document.getElementById("screen6").classList.add("hidden");
+            document.getElementById("memoriesScreen").classList.remove("hidden");
+        }
+
+        function goBackToGifts() {
+            document.getElementById("letterScreen").classList.add("hidden");
+            document.getElementById("promiseScreen").classList.add("hidden");
+            document.getElementById("memoriesScreen").classList.add("hidden");
+            document.getElementById("screen6").classList.remove("hidden");
+        }
+        function goBackToPrevious() {
+            const screens = document.querySelectorAll('.hidden');
+            screens.forEach(screen => screen.classList.add('hidden'));
+            document.getElementById("screen6").classList.remove('hidden');
+        }
+        function showNo(screen) {
+            let text = "";
+            if (screen === 1) {
+                text = "no, is not allowed gugu 🥺💖!!";
+            }
+            if (screen === 2) {
+                text = "wrong answer 😌 you are the handsome!";
+            }
+            if (screen === 3) {
+                text = "hehe think again 😏 we are perfect!";
+            }
+            if (screen === 4) {
+                text = "i will try harder for you gugu 🥺💗";
+            }
+            if (screen === 5) {
+                text = "access denied, you're stuck with me 😂😂 ";
+            }
+            
+            document.getElementById("noText" + screen).innerHTML = text;
+        }
+
+    </script>
+
+</body>
+
+</html>
